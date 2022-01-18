@@ -24,13 +24,11 @@ public class FabricanteServiceImpl implements FabricanteService {
         return FabricanteMapper.toVO(fabricanteRepository.findById(id)
                 .orElseThrow(NotFound::new));
     }
-
-    @Override
+    
     public void deleteById(Long id) {
         fabricanteRepository.deleteById(id);
     }
 
-    @Override
     public List<FabricanteVO> findAll() {
         return FabricanteMapper.toVO(fabricanteRepository.findAll());
     }
